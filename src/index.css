@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  @apply bg-gray-50 text-base;
+}
+
+@layer base {
+  h1 {
+    @apply text-xl font-semibold text-gray-800;
+  }
+  
+  h2 {
+    @apply text-lg font-medium text-gray-800;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-3 py-1.5 bg-gray-800 text-white rounded hover:bg-gray-700 transition-colors text-sm font-medium;
+  }
+  
+  .btn-secondary {
+    @apply px-3 py-1.5 border border-gray-200 rounded hover:bg-gray-50 transition-colors text-sm font-medium;
+  }
+  
+  .input {
+    @apply block w-full rounded border border-gray-200 px-3 py-1.5 text-sm focus:border-gray-400 focus:ring-1 focus:ring-gray-400;
+  }
+}
+
+/* Custom styles for react-day-picker */
+.rdp {
+  --rdp-cell-size: 24px !important;
+  --rdp-accent-color: #4b5563;
+  --rdp-background-color: #f9fafb;
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+/* Mobile-specific calendar styles */
+@media (max-width: 1024px) {
+  .rdp {
+    --rdp-cell-size: 40px !important;  /* Larger cells for mobile */
+    margin: 0 auto;  /* Center the calendar */
+  }
+
+  .rdp-caption {
+    @apply text-base;  /* Larger text for month/year */
+  }
+
+  .rdp-head_cell {
+    @apply text-sm;  /* Larger text for weekday names */
+  }
+
+  .rdp-day {
+    @apply text-base;  /* Larger text for dates */
+  }
+}
+
+.rdp-day_selected:not([disabled]) {
+  @apply bg-gray-800 text-white font-medium;
+}
+
+.rdp-day_selected:hover:not([disabled]) {
+  @apply bg-gray-700;
+}
+
+.rdp-day:hover:not([disabled]) {
+  @apply bg-gray-100;
+}
+
+.rdp-head_cell {
+  @apply text-xs font-medium text-gray-600;
+}
+
+.rdp-caption {
+  @apply text-sm;
+}
+
+/* Custom scrollbar styles */
+.overflow-y-auto::-webkit-scrollbar {
+  width: 6px;
+}
+
+.overflow-y-auto::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+.overflow-y-auto::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded;
+}
+
+.overflow-y-auto::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400;
+}
