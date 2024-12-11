@@ -1,0 +1,10 @@
+backend:
+  functions:
+    - handler: src/server/index.ts
+      type: httpServer
+      name: hairflow-api
+  environment:
+    - name: ELA_DATABASE_URL
+      value: ${env:ELA_DATABASE_URL}
+    - name: PORT
+      value: ${env:PORT}
